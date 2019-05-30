@@ -1,0 +1,42 @@
+<!--pages/every/every.wxml-->
+<view class='every'>
+  <view class='top'>
+      <image src='{{item.img}}'></image>
+      <view class='right'>
+        <view>{{item.nm}}</view>
+        <view>{{item.enm}}</view>
+        <view>{{item.wish}}人想看</view>
+        <view>{{item.cat}}</view>
+        <view>{{item.fra}}/{{item.dur}}分钟</view>
+        <view>{{item.pubDesc}}</view>
+      </view>
+  </view>
+  <view class='content'>
+    <view wx:for='{{list}}' wx:key='index' class='eve'>
+      <view class='zleft'>
+
+        <view class='tou'>
+          <view data-cinemaId='{{item.id}}' bindtap='buy'>{{item.nm}}</view>
+          <view>{{item.sellPrice}}元起</view>
+        </view>
+
+        <view class='add'>{{item.addr}}</view>
+
+        <view class='lei'>
+          <view class="{{item.tag.hallTypeVolist.vipTag ? 'active' : ''}}">{{item.tag.hallTypeVolist.vipTag}}</view>
+          <view wx:for='{{item.tag.hallType}}' wx:key='index'>
+            <view class="{{item ? 'active' : ''}}">{{item}}</view>
+          </view>
+        </view>
+        
+        <view class='youhui'>{{item.promotion.cardPromotionTag}}</view>
+        <view class='chang'>近期场次{{item.showTimes}}</view>
+      </view>
+
+      <view class='zright'>
+        {{item.distance}}
+      </view>
+    </view>
+    
+  </view>
+</view>

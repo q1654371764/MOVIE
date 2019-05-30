@@ -1,0 +1,42 @@
+<!--pages/buy/buy.wxml-->
+<view class='buy'>
+
+  <view class="tou">
+    <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+      <view wx:for="{{list}}" wx:key="index" class="{{movieNum === index ? 'act' : 'smalls'}}">
+          <view><image src="{{item.img}}" bindtap='click2' data-index='{{index}}'></image></view>
+          <view class='ev'>
+            <view class='eve'>{{item.nm}}</view>
+            <view class='eve'>{{item.sc}}</view>
+          </view>
+          <view class='eve'>{{item.desc}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class='content'>
+
+    <view class='ctop'>
+      <view wx:for='{{every}}' wx:key='index' bindtap='click' data-index='{{index}}' class="{{dataNum == index ? 'active' : ''}}">{{item.dateShow}}</view>
+    </view>
+    
+    <view class='dataBuy' wx:for='{{data}}' wx:key='index'>
+      
+      <view class='left'>{{item.tm}}</view>
+
+      <view class='nm'>
+        <text>{{item.lang}}{{item.tp}}</text>
+        <text>{{item.th}}</text>
+      </view>
+
+      <view class='pri'>
+        <text class="{{item.vipPriceName ? 'prileft' : ''}}">{{item.vipPriceName}}{{item.vipPrice}}</text>
+        <text>{{item.extraDesc}}</text>
+      </view>
+
+      <view class='right'>购票</view>
+
+    </view>
+
+  </view>
+</view>

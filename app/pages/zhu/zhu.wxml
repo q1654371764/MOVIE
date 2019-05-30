@@ -1,0 +1,55 @@
+<!--pages/zhu/zhu.wxml-->
+<view class='zhu'>
+    <view class='top'>
+        <view>北京</view>
+        <view bindtap='left' class="{{left ? 'active' : ''}}">正在热映</view>
+        <view bindtap='right' class="{{right ? 'active' : ''}}">即将上映</view>
+        <view bindtap='search'>搜索</view>
+    </view>
+    <view class='content' style="display:{{left ? 'block' : 'none'}}">
+      <view class='every' wx:for='{{list}}' wx:key='index'>
+          <view class='left'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view class='zhong'>
+            <view>{{item.nm}}</view>
+            <view>观众评{{item.sc}}</view>
+            <view>主演{{item.star}}</view>
+            <view>{{item.showInfo}}</view>
+          </view>
+          <view class='right'>
+            <view style="background:{{item.globalReleased ? 'red' : 'blue'}}" bindtap='buy' data-id='{{item.id}}'>{{item.globalReleased ? '购票' : '预售'}}</view>
+          </view>
+      </view>
+    </view>
+    <view class='content2' style="display:{{right ? 'block' : 'none'}}">
+      <view class="tou">
+        <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+          <view wx:for="{{scrollview}}" wx:key="index" class="smalls">
+              <view><image src="{{item.img}}"></image></view>
+              <view class='eve'>{{item.nm}}</view>
+              <view class='eve'>{{item.comingTitle}}</view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='every' wx:for='{{newlist}}' wx:key='index'>
+          <view class='left'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view class='zhong'>
+            <view>{{item.nm}}</view>
+            <view>{{item.wish}}想看</view>
+            <view>主演{{item.star}}</view>
+            <view>{{item.comingTitle}}</view>
+          </view>
+          <view class='right'>
+            <view style="background:{{item.globalReleased ? 'red' : 'blue'}}">{{item.globalReleased ? '购票' : '预售'}}</view>
+          </view>
+      </view>
+    </view>
+    <!-- <view class='footer'>
+      <view>电影</view>
+      <view>影院</view>
+      <view>我的</view>
+    </view> -->
+</view>

@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail'>
+  <view class='top'>
+      <image src='{{list.img}}'></image>
+      <view class='right'>
+        <view>{{list.nm}}</view>
+        <view>{{list.enm}}</view>
+        <view>{{list.wish}}人想看</view>
+        <view>{{list.cat}}</view>
+        <view>{{list.fra}}/{{list.dur}}分钟</view>
+        <view>{{list.pubDesc}}</view>
+      </view>
+  </view>
+</view>

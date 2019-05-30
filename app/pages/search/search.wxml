@@ -1,0 +1,18 @@
+<!--pages/search/search.wxml-->
+<view class='search'>
+  <view class='top'>
+    <input placeholder='搜电影、搜影院' class='inp' bindinput='search' bindfocus='focus' bindblur='blur'></input>
+    <view class='qu' bindtap='quxiao'>取消</view>
+  </view>
+  <view class='content' style="display:{{flag && list ? 'block' : 'none'}}">
+      <view wx:for='{{list}}' wx:key='index' class='every'>
+          <view bindtap='click' data-nm='{{item.nm}}' data-item='{{item}}'>{{item.nm}}</view>
+          <view>{{item.enm}}</view>
+          <view>{{item.star}}</view>
+          <view>{{item.pubDesc}}</view>
+      </view>
+  </view>
+  <view class='his'>
+    <view wx:for='{{his}}' wx:key='index'>{{item}}</view>
+  </view>
+</view>
